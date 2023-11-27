@@ -1,0 +1,101 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Food" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/foods_green</item>
+        <item name="colorPrimaryVariant">@color/foods_green</item>
+        <item name="colorOnPrimary">@color/foods_white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/foods_yellow</item>
+        <item name="colorSecondaryVariant">@color/foods_yellow</item>
+        <item name="colorOnSecondary">@color/foods_black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="bottomSheetDialogTheme">@style/BottomSheetStyle</item>
+        <item name="textInputStyle">@style/TextInputLayoutStyle</item>
+    </style>
+
+    <style name="NoActionBarTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/foods_green</item>
+        <item name="colorPrimaryVariant">@color/foods_green</item>
+        <item name="colorOnPrimary">@color/foods_white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/foods_yellow</item>
+        <item name="colorSecondaryVariant">@color/foods_yellow</item>
+        <item name="colorOnSecondary">@color/foods_black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="bottomSheetDialogTheme">@style/BottomSheetStyle</item>
+        <item name="textInputStyle">@style/TextInputLayoutStyle</item>
+        <item name="chipStyle">@style/Widget.MaterialComponents.Chip.Entry</item>
+    </style>
+
+    <style name="SplashScreenTitleStyle" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="android:textColor">@color/foods_green</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">sans-serif-condensed-medium</item>
+    </style>
+
+    <style name="TitleStyle" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textColor">@color/foods_green</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">sans-serif-condensed-medium</item>
+    </style>
+
+    <style name="NormalTextStyle" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textColor">@color/foods_black</item>
+        <item name="fontFamily">sans-serif-condensed-light</item>
+        <item name="android:textSize">@dimen/normal_font_size</item>
+    </style>
+
+    <style name="BoldTextStyle" parent="NormalTextStyle">
+        <item name="android:fontFamily">sans-serif-condensed-medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/foods_green</item>
+        <item name="android:textSize">@dimen/medium_font_size</item>
+    </style>
+
+    <style name="ButtonTextStyle" parent="NormalTextStyle">
+        <item name="android:fontFamily">sans-serif-condensed-medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/normal_font_size</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/foods_yellow</item>
+        <item name="android:textAppearance">@style/ButtonTextStyle</item>
+        <item name="android:paddingVertical">@dimen/padding_vertical_double</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="android:background">@color/white</item>
+        <item name="shapeAppearanceOverlay">@style/BottomSheetShapeAppearance</item>
+    </style>
+
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="shapeAppearanceOverlay">@style/TextInputLayoutShapeAppearance</item>
+        <item name="android:textAppearance">@style/NormalTextStyle</item>
+    </style>
+
+    <style name="RoundCornersImageStyle" parent="">
+        <item name="cornerSize">18%</item>
+    </style>
+
+    <style name="CardViewStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
+        <item name="cardElevation">@dimen/cardview_elevation</item>
+        <item name="cardUseCompatPadding">true</item>
+    </style>
+
+    <style name="TextInputLayoutShapeAppearance">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/text_input_layout_corner_radius</item>
+    </style>
+
+    <style name="BottomSheetShapeAppearance" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/bottom_sheet_corner_radius</item>
+        <item name="cornerSizeTopRight">@dimen/bottom_sheet_corner_radius</item>
+    </style>
+</resources>

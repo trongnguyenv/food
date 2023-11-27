@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <fraction name="guideline_percent">0.36</fraction>
+  <fraction name="guideline_percent_2">0.5</fraction>
+  <fraction name="guideline_percent_1">0.90</fraction>
+</resources>

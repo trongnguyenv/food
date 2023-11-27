@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/foods_white"
+    tools:context=".UserDetailsActivity">
+
+  <ImageView
+      android:id="@+id/recipe_image"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_gravity="center_horizontal"
+      android:scaleType="fitStart"
+      app:srcCompat="@drawable/cooking"
+      tools:ignore="ContentDescription" />
+
+  <androidx.core.widget.NestedScrollView
+      android:id="@+id/user_details_bottom_sheet"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      style="@style/BottomSheetStyle"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+      <View
+          android:id="@+id/divider"
+          android:layout_width="@dimen/divider_width"
+          android:layout_height="@dimen/divider_height"
+          android:layout_marginTop="@dimen/view_margin_vertical_double"
+          android:background="?attr/colorPrimary"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+          android:id="@+id/user_details_form_subtitle"
+          style="@style/BoldTextStyle"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="@dimen/screen_margin_horizontal_default"
+          android:layout_marginTop="@dimen/view_margin_vertical_quadraple"
+          android:layout_marginEnd="@dimen/screen_margin_horizontal_default"
+          android:gravity="center_horizontal"
+          android:text="@string/user_details_form_subtitle"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/divider" />
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:id="@+id/name_text_input_layout"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="@dimen/screen_margin_horizontal_default"
+          android:layout_marginTop="@dimen/view_margin_vertical_triple"
+          android:layout_marginEnd="@dimen/screen_margin_horizontal_default"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/user_details_form_subtitle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name" />
+
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <TextView
+          android:id="@+id/select_health_label"
+          style="@style/NormalTextStyle"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="@dimen/screen_margin_horizontal_default"
+          android:layout_marginTop="@dimen/view_margin_vertical_triple"
+          android:layout_marginEnd="@dimen/screen_margin_horizontal_default"
+          android:text="@string/select_health"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/name_text_input_layout" />
+
+      <com.google.android.material.chip.ChipGroup
+          android:id="@+id/health_chip_group"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="@dimen/screen_margin_horizontal_default"
+          android:layout_marginTop="@dimen/view_margin_vertical_double"
+          android:layout_marginEnd="@dimen/screen_margin_horizontal_default"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/select_health_label">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/alcohol_free_health"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/alcohol_free"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/celery_free_health"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/celery_free" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/crustacean_free_health"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crustacean_free" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/egg_free_health"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/egg_free" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/fish_free_health"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fish_free" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/fodmap_free_health"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fodmap_free" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/gluten_free"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/glutten_free" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/peanut_free"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/peanut_free" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/wheat_free"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wheat_free" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/dairy_free"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dairy_free" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/alcohol_free"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/alcohol_free" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/keto_friendly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/keto_friendly" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/vegan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vegan" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/pork_free"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pork_free" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/red_meat_free"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/red_meat_free" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/vegetarian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vegetarian" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/sulfite_free"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sulfite_free" />
+
+      </com.google.android.material.chip.ChipGroup>
+
+      <TextView
+          android:id="@+id/select_category"
+          style="@style/NormalTextStyle"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp"
+          android:layout_marginTop="@dimen/view_margin_vertical_triple"
+          android:layout_marginEnd="@dimen/screen_margin_horizontal_default"
+          android:text="@string/select_preference"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/health_chip_group" />
+
+      <com.google.android.material.chip.ChipGroup
+          android:id="@+id/category_chip_group"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="@dimen/screen_margin_horizontal_default"
+          android:layout_marginTop="@dimen/view_margin_vertical_double"
+          android:layout_marginEnd="@dimen/screen_margin_horizontal_default"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="1.0"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/select_category">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/generic_foods"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/generic_foods" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/generic_meals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/generic_meals" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/packaged_foods"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/packaged_foods" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/fast_foods"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fast_foods" />
+      </com.google.android.material.chip.ChipGroup>
+
+      <Button
+          android:id="@+id/btn_next"
+          style="@style/ButtonStyle"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="@dimen/screen_margin_horizontal_default"
+          android:layout_marginTop="@dimen/view_margin_vertical_quadraple"
+          android:layout_marginEnd="@dimen/screen_margin_horizontal_default"
+          android:text="@string/next"
+          android:textColor="#455A64"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/category_chip_group" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

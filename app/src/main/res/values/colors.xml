@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="foods_dark_green">#FF04454D</color>
+    <color name="foods_green">#FF04BA71</color>
+    <color name="foods_yellow">#FFFDC827</color>
+    <color name="foods_white">#FFF5F2EB</color>
+    <color name="foods_black">#FF39393A</color>
+</resources>
