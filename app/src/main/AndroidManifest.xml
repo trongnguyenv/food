@@ -26,13 +26,17 @@
             android:name=".UserDetailsActivity"
             android:exported="false"
             android:theme="@style/NoActionBarTheme" />
-<!--        <activity-->
-<!--            android:name=".RecipeDetailsActivity"-->
-<!--            android:exported="false" />-->
+        <activity
+            android:name=".FoodDetailsActivity"
+            android:exported="false" />
         <activity
             android:name=".HomeActivity"
             android:exported="false"
             android:label="@string/home" />
+        <activity
+            android:name=".FoodListActivity"
+            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

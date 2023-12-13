@@ -6,6 +6,8 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.project.food.models.Settings;
+import com.project.food.ui.CategoryFragment;
+import com.project.food.ui.SearchFragment;
 
 public class HomeViewPagerAdapter extends FragmentStateAdapter {
     private static final int NUM_PAGES = 3;
@@ -22,10 +24,10 @@ public class HomeViewPagerAdapter extends FragmentStateAdapter {
         Fragment fragment = new Fragment();
         switch (position){
             case 0:
-//                fragment = MealTypeFragment.newInstance(userSettings);
+                fragment = CategoryFragment.newInstance(userSettings);
                 break;
             case 1:
-//                fragment = SearchFragment.newInstance(userSettings);
+                fragment = SearchFragment.newInstance(userSettings);
                 break;
             case 2:
 //                fragment = new SavedRecipesFragment();

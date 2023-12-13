@@ -55,7 +55,7 @@ public class HomeActivity extends AppCompatActivity {
         new TabLayoutMediator(binding.tabLayout, binding.viewPager, (tab, position) -> {
             switch (position){
                 case 0:
-                    tab.setText(getString(R.string.meal_types));
+                    tab.setText(getString(R.string.parser));
                     break;
                 case 1:
                     tab.setText(getString(R.string.search));

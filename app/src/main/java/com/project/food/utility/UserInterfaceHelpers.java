@@ -61,11 +61,11 @@ public class UserInterfaceHelpers {
         textView.setVisibility(VISIBLE);
     }
 
-    public static void showRecipes(RecyclerView recyclerView){
+    public static void showFoods(RecyclerView recyclerView){
         recyclerView.setVisibility(VISIBLE);
     }
 
-    public static void showRecipeDetails(ImageView imageView, Group group){
+    public static void showFoodDetails(ImageView imageView, Group group){
         imageView.setVisibility(VISIBLE);
         group.setVisibility(VISIBLE);
     }

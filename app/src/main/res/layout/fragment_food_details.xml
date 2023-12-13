@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/foods_white"
+    tools:context=".ui.FoodDetailsFragment">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/progress_message"
+        style="@style/NormalTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin_horizontal_default"
+        android:layout_marginTop="@dimen/view_margin_vertical_six_times"
+        android:layout_marginEnd="@dimen/screen_margin_horizontal_default"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/small_font_size"
+        android:text="@string/progress_dialog_message"/>
+
+    <ImageView
+        android:id="@+id/food_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/content_desc_recipe_image"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        tools:srcCompat="@drawable/breakfast" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/recipe_details_bottom_sheet"
+        style="@style/BottomSheetStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="@dimen/divider_width"
+                android:layout_height="@dimen/divider_height"
+                android:layout_marginTop="@dimen/view_margin_vertical_double"
+                android:background="?attr/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/error_feedback"
+                style="@style/NormalTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_margin_horizontal_double"
+                android:layout_marginTop="@dimen/view_margin_vertical_double"
+                android:layout_marginEnd="@dimen/view_margin_horizontal_double"
+                android:gravity="center_horizontal"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider"
+                tools:text="@string/error" />
+
+            <TextView
+                android:id="@+id/food_label"
+                style="@style/TitleStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin_horizontal_default"
+                android:layout_marginTop="@dimen/view_margin_vertical_quadraple"
+                android:layout_marginEnd="@dimen/screen_margin_horizontal_default"
+                android:gravity="center_horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider"
+                tools:text="@string/food_label" />
+
+            <TextView
+                android:id="@+id/food_source"
+                style="@style/NormalTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin_horizontal_default"
+                android:layout_marginTop="@dimen/view_margin_vertical"
+                android:layout_marginEnd="@dimen/screen_margin_horizontal_default"
+                android:gravity="center_horizontal"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/food_label"
+                tools:text="@string/food_label" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/calories_card"
+                style="@style/CardViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_margin_horizontal_double"
+                android:layout_marginTop="@dimen/view_margin_vertical_double"
+                android:layout_marginEnd="@dimen/view_margin_horizontal_double"
+                app:layout_constraintEnd_toStartOf="@+id/yield_card"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/food_source">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/calories_label"
+                        style="@style/BoldTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/view_margin_horizontal_double"
+                        android:layout_marginTop="@dimen/view_margin_vertical_double"
+                        android:layout_marginEnd="@dimen/view_margin_horizontal_double"
+                        android:text="@string/calories"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/calories_quantity"
+                        style="@style/NormalTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/view_margin_horizontal_double"
+                        android:layout_marginTop="@dimen/view_margin_vertical"
+                        android:layout_marginEnd="@dimen/view_margin_horizontal_double"
+                        android:layout_marginBottom="@dimen/view_margin_vertical_double"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/calories_label"
+                        tools:text="@string/quantity" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/yield_card"
+                style="@style/CardViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_margin_horizontal_double"
+                android:layout_marginTop="@dimen/view_margin_vertical_double"
+                android:layout_marginEnd="@dimen/view_margin_horizontal_double"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/calories_card"
+                app:layout_constraintTop_toBottomOf="@id/food_source">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/yield_label"
+                        style="@style/BoldTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/view_margin_horizontal_double"
+                        android:layout_marginTop="@dimen/view_margin_vertical_double"
+                        android:layout_marginEnd="@dimen/view_margin_horizontal_double"
+                        android:text="@string/serving"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/yield_quantity"
+                        style="@style/NormalTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/view_margin_horizontal_double"
+                        android:layout_marginTop="@dimen/view_margin_vertical"
+                        android:layout_marginEnd="@dimen/view_margin_horizontal_double"
+                        android:layout_marginBottom="@dimen/view_margin_vertical_double"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/yield_label"
+                        tools:text="@string/quantity" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ingredient_list"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin_horizontal_triple"
+                android:layout_marginTop="@dimen/screen_margin_vertical_double"
+                android:layout_marginEnd="@dimen/screen_margin_horizontal_triple"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/measures_title"
+                tools:listitem="@layout/item_ingredient_list">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/measures_title"
+                style="@style/BoldTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_margin_horizontal_double"
+                android:layout_marginTop="@dimen/view_margin_vertical_triple"
+                android:layout_marginEnd="@dimen/view_margin_horizontal_double"
+                android:gravity="center_horizontal"
+                android:text="@string/measures"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/calories_card" />
+
+            <Button
+                android:id="@+id/btn_save"
+                style="@style/ButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin_horizontal_triple"
+                android:layout_marginTop="@dimen/view_margin_vertical_quadraple"
+                android:layout_marginEnd="@dimen/screen_margin_horizontal_triple"
+                android:layout_marginBottom="@dimen/view_margin_vertical_triple"
+                android:text="@string/save_food"
+                android:textColor="#455A64"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ingredient_list" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/details_bottom_sheet_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="food_label, food_source, calories_card, yield_card, measures_title, btn_save" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

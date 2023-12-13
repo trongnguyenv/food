@@ -8,12 +8,12 @@ public class Validator {
     /**
      * Method to validate that required user details are provided; they are not null or empty
      * @param name Text representing a user's name
-     * @param selectedDiets Selected diets
+     * @param selectedHealths Selected diets
      * @param selectedHealthPreferences Selected health preferences
      * @return If provided inputs are provided
      */
-    public static boolean validateRequiredUserDetailsFormInput(String name, List<String> selectedDiets, List<String> selectedHealthPreferences){
-        return !name.isEmpty() && selectedDiets.size() != 0 && selectedHealthPreferences.size() != 0;
+    public static boolean validateRequiredUserDetailsFormInput(String name, List<String> selectedHealths, List<String> selectedHealthPreferences){
+        return !name.isEmpty();
     }
 
     /**
@@ -22,7 +22,7 @@ public class Validator {
      * @return If name is valid
      */
     public static boolean validateNameInput(String name){
-        return !(name.length() < 4 || name.matches(".*\\d.*"));
+        return !(name.length() < 3 || name.matches(".*\\d.*"));
     }
 
     /**

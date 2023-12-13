@@ -8,7 +8,7 @@
     tools:context=".UserDetailsActivity">
 
   <ImageView
-      android:id="@+id/recipe_image"
+      android:id="@+id/food_image"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:layout_gravity="center_horizontal"
@@ -110,16 +110,16 @@
             android:text="@string/celery_free" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/crustacean_free_health"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/crustacean_free" />
-
-        <com.google.android.material.chip.Chip
             android:id="@+id/egg_free_health"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/egg_free" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/crustacean_free_health"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crustacean_free" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/fish_free_health"
@@ -128,16 +128,27 @@
             android:text="@string/fish_free" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/fodmap_free_health"
+            android:id="@+id/vegan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/fodmap_free" />
+            android:text="@string/vegan" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/gluten_free"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/glutten_free" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/fodmap_free_health"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fodmap_free" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/vegetarian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vegetarian" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/peanut_free"
@@ -170,12 +181,6 @@
             android:text="@string/keto_friendly" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/vegan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/vegan" />
-
-        <com.google.android.material.chip.Chip
             android:id="@+id/pork_free"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -186,12 +191,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/red_meat_free" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/vegetarian"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/vegetarian" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/sulfite_free"
