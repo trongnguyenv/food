@@ -113,7 +113,9 @@
     <string name="failed_authentication">Authentication failed</string>
     <string name="email_verification_prompt">Please verify your email before proceeding</string>
     <string name="saved">Saved</string>
-    <string name="save_food">Save food</string>
+    <string name="removed">Removed</string>
+    <string name="save_favorite">Save favorite</string>
+    <string name="remove_favorite">Remove favorite</string>
     <string name="logout">Logout</string>
     <string name="progress_dialog_message">Loading…</string>
     <string name="progress_dialog_message_login">Authenticating …</string>

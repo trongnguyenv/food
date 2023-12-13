@@ -103,11 +103,8 @@ public class FoodListFragment extends Fragment implements ItemOnClickListener {
                 if(response.isSuccessful()){
                     assert response.body() != null;
                     adapter = new FoodListAdapter(getContext(), response.body().getHints(), FoodListFragment.this);
-
                     setLayoutManager();
-
                     binding.foodList.setAdapter(adapter);
-
                     if(adapter.getItemCount() > 0){
                         showFoods(binding.foodList);
                     } else {
@@ -144,7 +141,6 @@ public class FoodListFragment extends Fragment implements ItemOnClickListener {
         String data = new Gson().toJson(hint);
         intent.putExtra(Constants.EXTRA_HINT, data);
         intent.putExtra(Constants.EXTRA_SAVED, isSaved);
-        Log.d(TAG, "Hint: " + hint);
         startActivity(intent);
     }
 

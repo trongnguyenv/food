@@ -7,6 +7,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.project.food.models.Settings;
 import com.project.food.ui.CategoryFragment;
+import com.project.food.ui.SavedFoodsFragment;
 import com.project.food.ui.SearchFragment;
 
 public class HomeViewPagerAdapter extends FragmentStateAdapter {
@@ -30,7 +31,7 @@ public class HomeViewPagerAdapter extends FragmentStateAdapter {
                 fragment = SearchFragment.newInstance(userSettings);
                 break;
             case 2:
-//                fragment = new SavedRecipesFragment();
+                fragment = new SavedFoodsFragment();
                 break;
         }
         return fragment;

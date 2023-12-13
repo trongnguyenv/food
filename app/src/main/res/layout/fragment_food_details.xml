@@ -237,7 +237,7 @@
                 android:layout_marginTop="@dimen/view_margin_vertical_quadraple"
                 android:layout_marginEnd="@dimen/screen_margin_horizontal_triple"
                 android:layout_marginBottom="@dimen/view_margin_vertical_triple"
-                android:text="@string/save_food"
+                android:text="@string/save_favorite"
                 android:textColor="#455A64"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

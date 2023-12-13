@@ -11,9 +11,7 @@ public class Constants {
     public static final String INGR_QUERY_PARAMETER = "ingr";
     public static final String CATEGORY_QUERY_PARAMETER = "category";
     public static final String SEARCH_QUERY_PARAMETER = "q";
-    public static final String SEARCH_TYPE_QUERY_PARAMETER = "type";
     public static final String FIREBASE_CHILD_SETTINGS_LOCATION = "settings";
-    public static final String FIREBASE_QUERY_INDEX = "index";
     public static final String EXTRA_HINT = "hint";
     public static final String EXTRA_FOOD_ID = "food_id";
     public static final String EXTRA_USER_SETTINGS = "user_settings";

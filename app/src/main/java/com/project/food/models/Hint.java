@@ -40,9 +40,11 @@ public class Hint {
                 "}";
     }
 
-    public Hint(Food food) {
+    public Hint(Food food, ArrayList<Measure> measures) {
         this.food = food;
+        this.measures = measures;
     }
+
     public Food getFood() {
         return food;
     }

@@ -5,9 +5,11 @@ import static com.project.food.utility.UserInterfaceHelpers.hideProgressDialog;
 import static com.project.food.utility.UserInterfaceHelpers.showFoodDetails;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,6 +24,7 @@ import com.project.food.R;
 import com.project.food.adapter.MeasureListAdapter;
 import com.project.food.databinding.FragmentFoodDetailsBinding;
 import com.project.food.models.Hint;
+import com.project.food.utility.DatabaseHelper;
 
 import java.util.Locale;
 import java.util.Objects;
@@ -33,6 +36,7 @@ public class FoodDetailsFragment extends Fragment {
     private boolean foodStatus;
     private static final String ARG_HINT = "hint";
     private static final String ARG_FOOD_STATUS = "food_status";
+    private DatabaseHelper db;
 
     public FoodDetailsFragment() {
         // Required empty public constructor
@@ -54,6 +58,7 @@ public class FoodDetailsFragment extends Fragment {
             hint = getArguments().getString(EXTRA_HINT);
             foodStatus = getArguments().getBoolean(ARG_FOOD_STATUS);
         }
+        db = new DatabaseHelper(getActivity());
     }
 
     @Override
@@ -71,8 +76,11 @@ public class FoodDetailsFragment extends Fragment {
     }
 
     private void setUpSaveButton(Hint hint) {
-        if (foodStatus){
-            binding.btnSave.setVisibility(View.GONE);
+        // check food added to favorite
+        boolean isSaved = hint.getFood().getIsSaved();
+        if (foodStatus || isSaved){
+            binding.btnSave.setText(getString(R.string.remove_favorite));
+            binding.btnSave.setOnClickListener(view -> removeFavorite(hint));
         } else {
             binding.btnSave.setOnClickListener(view -> saveFood(hint));
         }
@@ -107,5 +115,37 @@ public class FoodDetailsFragment extends Fragment {
     }
 
     private void saveFood(Hint hint) {
+        hint.getFood().setSaved(true);
+        // convert hint class into json string put extra
+        String data = new Gson().toJson(hint);
+        boolean isInserted = db.addFoodFavorite(data);
+        if(isInserted){
+            Toast.makeText(getContext(), R.string.saved, Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Log.d(TAG, "Error while saving food");
+            Toast.makeText(getContext(), R.string.not_saved, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void removeFavorite(Hint hint){
+        // convert hint class into json string put extra
+        String data = new Gson().toJson(hint);
+        boolean isRemoved = db.removeFoodFavorite(data);
+        if(isRemoved){
+            Toast.makeText(getContext(), R.string.removed, Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Log.d(TAG, "Error while removing food");
+            Toast.makeText(getContext(), R.string.not_saved, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 }

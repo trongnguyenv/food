@@ -18,7 +18,7 @@ import com.project.food.models.Hint;
 import java.util.List;
 import java.util.Locale;
 
-public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.FoodListViewHolder>{
+public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.FoodListViewHolder> {
     public static final String TAG = FoodListAdapter.class.getSimpleName();
     private final Context context;
     private final List<Hint> hints;
@@ -50,6 +50,7 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.FoodLi
     public int getItemCount() {
         return hints.size();
     }
+
     public static class FoodListViewHolder extends RecyclerView.ViewHolder {
         private final ItemFoodListBinding binding;
         private final Context context;

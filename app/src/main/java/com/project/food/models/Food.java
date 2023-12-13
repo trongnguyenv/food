@@ -14,7 +14,6 @@ public class Food {
     private String category;
     private String categoryLabel;
     private String image;
-
     private String brand;
     private String foodContentsLabel;
     private ArrayList<ServingSize> servingSizes;
@@ -115,4 +114,5 @@ public class Food {
     public boolean getIsSaved() {
         return isSaved;
     }
+    public void setSaved(boolean saved) { isSaved = saved;}
 }
