@@ -7,7 +7,7 @@ import java.util.List;
 @Parcel
 public class Settings {
     private String name;
-    private List<String> diets;
+    private List<String> healths;
     private List<String> preferences;
 
     public Settings() {
@@ -15,7 +15,7 @@ public class Settings {
 
     public Settings(String name, List<String> diets, List<String> preferences) {
         this.name = name;
-        this.diets = diets;
+        this.healths = diets;
         this.preferences = preferences;
     }
 
@@ -27,12 +27,12 @@ public class Settings {
         this.name = name;
     }
 
-    public List<String> getDiets() {
-        return diets;
+    public List<String> getHealths() {
+        return healths;
     }
 
-    public void setDiets(List<String> diets) {
-        this.diets = diets;
+    public void setHealths(List<String> healths) {
+        this.healths = healths;
     }
 
     public List<String> getPreferences() {

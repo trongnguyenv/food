@@ -80,6 +80,7 @@ public class FoodDetailsFragment extends Fragment {
 
     // Load recipe details
     private void loadFood(String data){
+        // convert json to hint class
         Hint hint = new Gson().fromJson(data, Hint.class);
         hideProgressDialog(binding.progressBar, binding.progressMessage);
         setFoodDetails(hint);

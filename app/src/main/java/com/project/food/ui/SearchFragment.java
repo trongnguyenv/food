@@ -41,8 +41,6 @@ public class SearchFragment extends Fragment{
     private FragmentSearchBinding binding;
     private Settings userSettings;
     private EdamamApi client;
-//    private List<String> results;
-
     private SeachListAdapter adapter;
 
     public SearchFragment() { }
@@ -111,7 +109,8 @@ public class SearchFragment extends Fragment{
                     if(adapter.getItemCount() > 0){
                         showFoods(binding.resultList);
                     } else {
-//                        showNoContentFound(binding.errorText, getString(R.string.search_no_result));
+                        // if no result show this
+                        // showNoContentFound(binding.errorText, getString(R.string.search_no_result));
                     }
                 } else {
                     showUnsuccessfulFeedback(binding.errorText, requireContext());

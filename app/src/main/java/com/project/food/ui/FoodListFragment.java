@@ -140,6 +140,7 @@ public class FoodListFragment extends Fragment implements ItemOnClickListener {
     @Override
     public void onClick(Hint hint, boolean isSaved) {
         Intent intent = new Intent(getContext(), FoodDetailsActivity.class);
+        // convert hint class into json string put extra
         String data = new Gson().toJson(hint);
         intent.putExtra(Constants.EXTRA_HINT, data);
         intent.putExtra(Constants.EXTRA_SAVED, isSaved);
